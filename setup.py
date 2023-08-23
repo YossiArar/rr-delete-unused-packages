@@ -14,7 +14,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='rr-delete-unused-packages',
-      version='beta-0.1',
+      version='0.1-beta',
       description='rr-delete-unused-packages',
       url='https://upload.pypi.org/legacy/',
       author='Yossi Arar',

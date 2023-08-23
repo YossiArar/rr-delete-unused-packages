@@ -1,24 +1,27 @@
 # Description
 
-This library reduces the size of the Python virtual environment according to the use of the libraries in the project.
-The goal is to ensure that no library is left unused to optimize the use of existing resources.
-ֿ
-Applying the process is very easy and clear. It is important to know that you must not work in the tested environment until the end of the run. At the end of the process, you can decide whether to keep the newly created environment or return to the previous one, according to your considerations.
-
+This library is designed to reduce the size of your Python virtual environment based on the actual usage of libraries in
+your project. The primary objective is to eliminate any unused libraries to optimize resource utilization effectively.
+The process is straightforward and user-friendly. However, it's crucial to refrain from working within the tested
+environment until the process is complete. At the conclusion of the process, you'll have the flexibility to decide
+whether to retain the newly created environment or revert to the previous one, depending on your specific requirements.
 
 # Environment and Installations
-- Install python version >= 3.10
-- Go to the relevant project for test the virtual environment
-- requirements.txt file should be in the project root path  
-- Install rr-delete-unused-packages package from pypi:
+
+- Ensure that you have Python version 3.10 or higher installed.
+- Navigate to the relevant project where you want to test the virtual environment.
+- Ensure that a requirements.txt file is present in the project's root path.
+- Install the rr-delete-unused-packages package from PyPI using the following command:
+
 ```sh
 pip install rr-delete-unused-packages
 ```
 
-
 # Test your virtual environment
-### option 1 - run this script from project root path, and put your project_env_file_path before start the process:
-```code
+
+### Run this script from the project's root path:
+
+```sh
 import os
 from rr_process.delete_unused_libs import UnusedDependencies
 
@@ -27,6 +30,10 @@ if __name__ == '__main__':
     UnusedDependencies(main_path=project_main_fp, venv_path=venv_fp).run()
 ```
 
+- Please make sure to replace <project_env_file_path> with the actual path to your project's environment path.
 
+### The second option is Start a new session by terminal command:
 
-### option 2 - run this script by terminal commands
+[Instructions for option 2 here]
+
+These instructions should help you test your virtual environment effectively.

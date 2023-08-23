@@ -1,15 +1,19 @@
 import os.path
+import shutil
+import sys
 
 
 class PyPIArtifact:
     def __init__(self, main_path, user=None, password=None):
         self.__dist_dir = f"{main_path}/dist"
         if user is not None:
-            self.__user = user
-            self.__password = password
+            self.__user, self.__password = user, password
+        elif len(sys.argv) > 1:
+            self.__user, self.__password = sys.argv[1], sys.argv[2]
         else:
-            self.__user = os.environ.get('pypi-user')
-            self.__password = os.environ.get('pypi-password')
+            self.__user, self.__password = os.environ.get('pypi-user'), os.environ.get('pypi-password')
+        if not self.__user or not self.__password:
+            raise print(f"pypi connection required user & password: {self.__user}, {self.__password}.")
         self.__build_commands = self.__build_terminal_commands
 
     @property

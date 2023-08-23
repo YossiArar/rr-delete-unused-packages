@@ -1,4 +1,4 @@
-# Description
+# rr-delete-unused-packages
 
 This library is designed to reduce the size of your Python virtual environment based on the actual usage of libraries in
 your project. The primary objective is to eliminate any unused libraries to optimize resource utilization effectively.

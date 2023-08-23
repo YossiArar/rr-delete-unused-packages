@@ -8,7 +8,7 @@ import rr_process as rp
 class UnusedDependencies:
     def __init__(self, main_path: str, venv_path: str):
         if not main_path or not venv_path:
-            raise print(f"project_main_path and venv_path values: {main_path}, {venv_path}.")
+            raise print(f"the project required main_path and venv_path values: {main_path}, {venv_path}.")
         self.__main_path, self.__venv_path = main_path, venv_path
         self.__ignore_current_requirements = False if len(sys.argv) < 3 else sys.argv[3]
         requirements_file_name = rp.REQ_FILE_NAME if len(sys.argv) < 4 else sys.argv[4]
@@ -87,5 +87,7 @@ class UnusedDependencies:
 
 
 if __name__ == '__main__':
-    project_main_fp, venv_fp = sys.argv[1], sys.argv[2]
+    project_main_fp, venv_fp = None, None
+    if len(sys.argv) > 1:
+        project_main_fp, venv_fp = sys.argv[1], sys.argv[2]
     UnusedDependencies(main_path=project_main_fp, venv_path=venv_fp).run()

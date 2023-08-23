@@ -30,10 +30,10 @@ if __name__ == '__main__':
     UnusedDependencies(main_path=project_main_fp, venv_path=venv_fp).run()
 ```
 
-- Please make sure to replace <project_env_file_path> with the actual path to your project's environment path.
+### The second option is start a new session by terminal command:
+```sh
+python3 ./<script_env_file_path>/delete_unused_libs.py ./ ./<project_env_file_path>
+```
 
-### The second option is Start a new session by terminal command:
+#### Please make sure to replace <project_env_file_path> & <script_env_file_path> with the actual path to your project's environment path.
 
-[Instructions for option 2 here]
-
-These instructions should help you test your virtual environment effectively.

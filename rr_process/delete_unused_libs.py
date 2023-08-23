@@ -10,9 +10,8 @@ class UnusedDependencies:
         if not main_path or not venv_path:
             raise print(f"the project required main_path and venv_path values: {main_path}, {venv_path}.")
         self.__main_path, self.__venv_path = main_path, venv_path
-        self.__ignore_current_requirements = False if len(sys.argv) < 3 else sys.argv[3]
-        requirements_file_name = rp.REQ_FILE_NAME if len(sys.argv) < 4 else sys.argv[4]
-        self.__current_dependencies = rp.get_dependencies(path=f"{self.__main_path}/{requirements_file_name}")
+        self.__ignore_current_requirements = False
+        self.__current_dependencies = rp.get_dependencies(path=f"{self.__main_path}/{rp.REQ_FILE_NAME}")
         self.__temp_requirements = f"{self.__main_path}/update_requirements.txt"
         self.__venv_size = rp.get_venv_size(path=self.__venv_path)
 
